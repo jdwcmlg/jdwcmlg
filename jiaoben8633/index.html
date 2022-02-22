@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <!--防止IE进入怪异模式-->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+  <meta name="renderer" content="webkit">
+  <!--让部分国产浏览器默认采用高速模式渲染页面-->
+  <title>jQuery可拉动水平刻度时间轴特效 - 站长素材</title>
+  <!--[if lt IE 9]>
+    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <link rel="stylesheet" type="text/css" href="css/layout.css" />
+  <link rel="stylesheet" href="css/swiper-bundle.min.css">
+</head>
+
+<body>
+<div style="width: 80%;height: 80%;overflow: hidden;">
+  <div class="time-line-box">
+    <div class="swiper-container">
+      <ul class="layui-timeline swiper-wrapper">
+        <li class="layui-timeline-item swiper-slide">
+          <div class="layui-timeline-content layui-text">
+            <dl>
+              <dt class="layui-timeline-title">2015年</dt>
+              <dd>4月 医普科诺成立</dd>
+              <dd>6月 加入CDISC</dd>
+              <dd>12月 第一个合同签署</dd>
+            </dl>
+          </div>
+        </li>
+        <li class="layui-timeline-item  swiper-slide">
+          <div class="layui-timeline-content layui-text">
+            <dl>
+              <dt class="layui-timeline-title">2016年</dt>
+              <dd>6月 购买Meddra词典</dd>
+              <dd>12月 购买JMP® Clinical软件</dd>
+            </dl>
+          </div>
+        </li>
+        <li class="layui-timeline-item  swiper-slide">
+          <div class="layui-timeline-content layui-text">
+            <dl>
+              <dt class="layui-timeline-title">2017年</dt>
+              <dd>12月 合同数57个，员工数20位</dd>
+            </dl>
+          </div>
+        </li>
+        <li class="layui-timeline-item  swiper-slide">
+          <div class="layui-timeline-content layui-text">
+            <dl>
+              <dt class="layui-timeline-title">2018年</dt>
+              <dd>1月 购买Rave解决方案</dd>
+              <dd>3月 购买Phoenix WinNonlin</dd>
+              <dd>6月 购买WHODrug 词典，上海办公室成立</dd>
+              <dd>12月 合同数突破100个</dd>
+            </dl>
+          </div>
+        </li>
+        <li class="layui-timeline-item swiper-slide">
+          <div class="layui-timeline-content layui-text">
+            <dl>
+              <dt class="layui-timeline-title">2019年</dt>
+              <dd>1月 购买Balance解决方案</dd>
+              <dd>2月 成立青岛办公室</dd>
+              <dd>12月 合同数突破200个</dd>
+            </dl>
+          </div>
+        </li>
+        <li class="layui-timeline-item swiper-slide">
+          <div class="layui-timeline-content layui-text">
+            <dl>
+              <dt class="layui-timeline-title">2020年</dt>
+              <dd>12月 自主研发五个实用小工具</dd>
+            </dl>
+          </div>
+        </li>
+        <li class="layui-timeline-item swiper-slide item-this">
+          <div class="layui-timeline-content layui-text">
+            <dl>
+              <dt class="layui-timeline-title">2021年</dt>
+              <dd>7月 成立嘉兴办公室</dd>
+              <dd>12月 预计合同数达到480个，员工数达140位</dd>
+            </dl>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/swiper-bundle.min.js"> </script>
+  <script>
+    $(function () {
+      var w = window.innerWidth;
+      var i;
+      $(function () {
+        $(".swiper-container li").each(function (index) {
+          i = index + 1;
+          if (parseInt($(".layui-timeline").css('padding-top')) <= $(this).find('dl').height() && index % 2 != 0) {
+            $(".layui-timeline").css('padding-top', $(this).find('dl').height() + 10);
+          };
+        });
+        var swiper = new Swiper('.swiper-container', {
+          roundLengths: true,
+          slidesPerView: 'auto',
+          freeMode: true
+        });
+        // 跳转到最后一个
+        swiper.slideTo(i, 1000, false);
+      });
+    });
+  </script>
+</body>
+</html>

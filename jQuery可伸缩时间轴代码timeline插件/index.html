@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery可伸缩时间轴代码timeline插件</title>
+<link type="text/css" rel="stylesheet" href="css/timeline.css"/>
+<script type="text/javascript" src="js/jquery-1.8.1.min.js"></script>
+<script type="text/javascript">
+   $(function(){
+    //隐藏所有子栏目（除第一个栏目外）
+	$(".year:not(:first)").find(".month").hide();
+	//点击大栏目
+	  $(".year>li").click(function(){
+		  $("li.active",$(this).parent()).removeClass("active");
+		  $(this).addClass("active");
+		  $("ul>li:first",this).addClass("active");		  		  
+	  });
+	  $(".month>li").click(function(){
+		  var $ul=$(this).parent();		  
+		  $ul.find(".active").removeClass("active");		  
+		  $(this).addClass("active");
+          return false;		  
+	  });
+   });
+	  
+</script>
+</head>
+<body>
+<script src="/demos/googlegg.js"></script>
+<div class="box">
+	<div class="timeline" style="position: relative; top: 100px; left: 400px;">
+		<ul class="year">
+			<!--year-->
+			<li>
+				<div class="year-button"> 2021 </div>
+				<ul class="month">
+					<li><a href="#">12月</a></li>
+					<li><a href="#">7月</a></li>
+				</ul>
+				<!--month--> 
+			</li>
+			<!--year-->
+			<li class="active">
+				<div class="year-button"> 2020 </div>
+				<ul class="month">
+					<li class="active"><a href="#">12月</a></li>
+				</ul>
+				<!--month--> 
+			</li>
+			<!--year-->
+			<li>
+				<div class="year-button"> 2019 </div>
+				<ul class="month">
+					<li><a href="#">12月</a></li>
+					<li><a href="#">2月</a></li>
+					<li><a href="#">1月</a></li>
+				</ul>
+				<!--month--> 
+			</li>
+			<!--year-->
+			<li>
+				<div class="year-button"> 2018 </div>
+				<ul class="month">
+					<li><a href="#">12月</a></li>
+					<li><a href="#">6月</a></li>
+					<li><a href="#">3月</a></li>
+					<li><a href="#">1月</a></li>
+				</ul>
+				<!--month--> 
+			</li>
+			<!--year-->
+			<li>
+				<div class="year-button"> 2017 </div>
+				<ul class="month">
+					<li><a href="#">12月</a></li>
+				</ul>
+				<!--month--> 
+			</li>
+			<!--year-->
+			<li>
+				<div class="year-button"> 2016 </div>
+				<ul class="month">
+					<li><a href="#">12月</a></li>
+					<li><a href="Meddra">6月</a></li>
+				</ul>
+				<!--month--> 
+			</li>
+			<!--year-->
+			<li>
+				<div class="year-button"> 2015 </div>
+				<ul class="month">
+					<li><a href="#first">12月</a></li>
+					<li><a href="#CDISC">6月</a></li>
+					<li><a href="#establish">4月</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<div style="text-align:center;font:normal 14px/24px 'MicroSoft YaHei';">
+<br><br><br><br><br><br>
+<h3 id="establish">
+	<p>医普科诺成立</p>
+</h3>
+<h3 id="CDISC">
+	<p>加入CDISC会员</p>
+</h3>
+<h3 id="first">
+	<p>第一个合同签署</p>
+</h3>
+<h3 id="Meddra">
+	<p>购买Meddra词典</p>
+</h3>
+</div>
+</body>
+</html>

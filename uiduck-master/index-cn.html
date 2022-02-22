@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>uiduck demo</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link href="uiduck/css/uiduck.css" type="text/css" rel="stylesheet">
+	<link href="uiduck/css/simple.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+	<div style="width:65%;padding-bottom: 200px;">
+		<!--以下为两个必须div元素-->
+		<script type="text/html" id="barDemo">
+		</script>
+		<div id="table1"></div>
+	</div>
+</body>
+<script language="Javascript" src="uiduck/js/jquery.min.js"></script>
+<script language="Javascript" src="uiduck/js/json2.js"></script>
+<script language="Javascript" src="uiduck/js/uiduck.js"></script>
+<script LANGUAGE="javascript">
+	var uiduck4 = new uiduck('uiduck4', {
+		templateId: "table4",
+		language: {
+			tag: 'English'
+		},
+		page: true,
+		pageOptions: {
+			limit: 5,
+			limits: ['5', '10', '15', '20', '25']
+		},
+		page: true,
+		fieldOptions: [{
+				index: true,
+				title: "排序"
+			},
+			{
+				key: "icon",
+				title: "时间",
+				width: "120px",
+				height: "50px"
+			}, {
+				key: "name",
+				title: "项目名称"
+			}, {
+				key: "emil",
+				title: "申办方"
+			}, {
+				key: "wechat",
+				title: "治疗领域"
+			}, 
+			{
+				key: "stages",
+				title: "分期"
+			}, 
+		]
+	});
+	var data4 = [{
+		"icon": "2021年8月",
+		"name": "P250_ROCHE_VD-total-II CO#01====CO1_P250_VD total II",
+		"emil": "罗氏诊断产品（上海）有限公司",
+		"wechat": "N内分泌系统疾病",
+		"stages": "诊断试剂",
+	},{
+		"icon": "2021年8月",
+		"name": "P325_RG_ IPQDASHBOARD_RG01-04563==项目服务订单 IPQ-小工具_IPQ dashboard_RG01-04563项目服务费",
+		"emil": "诺思格医药科技股份有限公司",
+		"wechat": "-",
+		"stages": "其他",
+	},{
+		"icon": "2021年8月",
+		"name": "P331_MARIS_01_DM===迈瑞生医美产品EDC+数据管理服务",
+		"emil": "北京迈瑞生医药科技有限公司",
+		"wechat": "设备和诊断",
+		"stages": "医疗器械",
+	},{
+		"icon": "2021年8月",
+		"name": "2021-088-P322_XBiome_XCT0273002-2021-IIT_ASD==未知君XCT0273002 ASD IIT项目数统服务",
+		"emil": "深圳未知君生物科技有限公司",
+		"wechat": "N各类神经系统疾病",
+		"stages": "IIT",
+	},
+	{
+		"icon": "2021年8月",
+		"name": "P304_BETTA_BD-BF-IV01==杨俊-IIT—I期肿瘤探索性3+1项目",
+		"emil": "贝达药业股份有限公司",
+		"wechat": "N良性、恶性及性质不明的肿瘤",
+		"stages": "IIT",
+	},{
+		"icon": "2021年7月",
+		"name": "P318_ROCHE_PD-L1_GC==VENTANA PD-L1(SP263)_GC",
+		"emil": "罗氏诊断产品（上海）有限公司",
+		"wechat": "设备和诊断",
+		"stages": "诊断试剂",
+	},{
+		"icon": "2021年7月",
+		"name": "P317_ROCHE_PD-L1_CC==VENTANA PD-L1(SP263)_CC",
+		"emil": "罗氏诊断产品（上海）有限公司",
+		"wechat": "设备和诊断",
+		"stages": "诊断试剂",
+	},{
+		"icon": "2021年7月",
+		"name": "P291_kelun_ A288-2_be_003==罗红霉素分散片在健康受试者中的单剂量、空腹、随机、开放、两周期、两交叉生物等效性研究",
+		"emil": "四川科伦药物研究院",
+		"wechat": "-",
+		"stages": "药物BE",
+	},{
+		"icon": "2021年6月",
+		"name": "P307_ROCHE_ANTI-HBC II QUANT==Anti-HBc II quant",
+		"emil": "罗氏诊断产品（上海）有限公司",
+		"wechat": "N免疫系统疾病",
+		"stages": "诊断试剂",
+	},{
+		"icon": "2021年6月",
+		"name": "P303_HR_SHR8735-114==Emma-不同处方海曲泊帕乙醇胺片在健康受试者中的生物等效性研究（单中心、随机、开放、三交叉生物等效性的研究）",
+		"emil": "江苏恒瑞医药股份有限公司",
+		"wechat": "N血液及淋巴系统疾病",
+		"stages": "药物BE",
+	},{
+		"icon": "2021年6月",
+		"name": "P313_JS_CT28_IDMC==潘虹_CT28_特瑞普利单抗联合依托泊苷及铂类一线治疗广泛期小细胞肺癌的随机、双盲、安慰剂对照III期研究的IDMC",
+		"emil": "上海君实生物医药科技股份有限公司",
+		"wechat": "N良性、恶性及性质不明的肿瘤",
+		"stages": "药物III",
+	},{
+		"icon": "2021年6月",
+		"name": "P300_SIEMENS_HBcT==孙爽-西门子HBcT II 临床试验统计服务",
+		"emil": "西门子医疗系统有限公司",
+		"wechat": "N肝胆系统疾病",
+		"stages": "诊断试剂",
+	},{
+		"icon": "2021年6月",
+		"name": "P289_SIMCERE_ SIM-372-ENDO-301==SIM-372-ENDO-301",
+		"emil": "先声药业",
+		"wechat": "N呼吸系统、胸及纵隔疾病",
+		"stages": "药物III",
+	},{
+		"icon": "2021年6月",
+		"name": "P298_CARSGEN_CT0590-CG6011==CT0590-CG6011数据管理服务",
+		"emil": "科济生物医药（上海）有限公司/恺兴生物",
+		"wechat": "N良性、恶性及性质不明的肿瘤",
+		"stages": "IIT",
+	},{
+		"icon": "2021年4月",
+		"name": "P286_ROCHE_ HBsAg==Elecsys HBsAg II Auto Confirm_乙型肝炎病毒表面抗原确认试剂（电化学发光法）方法学比对临床试验",
+		"emil": "罗氏诊断产品（上海）有限公司",
+		"wechat": "N全身性疾病及给药部位各种反应",
+		"stages": "诊断试剂",
+	},{
+		"icon": "2021年3月",
+		"name": "P275_HR_SHR3680-ISS_Emma-SHR3680-ISS-本项目为截止2021年01月18日，SHR3680已在国内外开展了8项I~III期临床研究的SHR3680的安全性总结（ISS）分析",
+		"emil": "江苏恒瑞医药股份有限公司",
+		"wechat": "-",
+		"stages": "其他",
+	},{
+		"icon": "2021年3月",
+		"name": "丁永刚-MA-EC-RWS-003统计部分",
+		"emil": "江苏恒瑞医药股份有限公司",
+		"wechat": "-",
+		"stages": "IV",
+	},{
+		"icon": "2021年3月",
+		"name": "P271_CT0180-CG1203项目DM服务",
+		"emil": "科济生物医药（上海）有限公司/恺兴生物",
+		"wechat": "肿瘤学",
+		"stages": "IIT",
+	},{
+		"icon": "2021年3月",
+		"name": "P253_刘燕_RWS_MA-NSCLC-RWS-013",
+		"emil": "江苏恒瑞医药股份有限公司",
+		"wechat": "肿瘤学",
+		"stages": "IV",
+	},{
+		"icon": "2020年12月",
+		"name": "某数据建库+数据清理项目",
+		"emil": "首都医科大学公共卫生学院",
+		"wechat": "-",
+		"stages": "其他",
+	}
+]
+	uiduck2.setData(data4, false);
+	function getRow(e) {
+		alert(JSON.stringify(uiduck.getRow(e)))
+	}
+</script>
+
+</html>
